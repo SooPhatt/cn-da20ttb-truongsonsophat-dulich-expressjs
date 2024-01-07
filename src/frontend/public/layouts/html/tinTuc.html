@@ -1,0 +1,72 @@
+<div class="container" style="padding-top: 5px;">
+    <!-- Button -->
+    <div>
+        <button type="button" id="btnTinTucThemMoi" class="btn btn-primary mb-2 d-none" data-toggle="modal" data-target="#modalThemMoiTinTuc"><i class="fas fa-plus-circle"></i> Thêm mới</button>
+    </div>
+    <!-- Mẫu tin tức -->
+    <div id="mauTinTuc" class="row d-none ">
+        <div class="col-4 mt-5">
+            <img src="" class="img-fluid imgTinTicHinhAnh" alt="" width="300" height="200"> 
+        </div>
+        <div class="col-8 mt-5">
+            <h6 class="lblTenTinTuc"> Tên tin tức</h6>
+            <p class="lblTomTatTinTuc"> Tóm tắt ngắn gọn</p>
+            <div>
+                <button type="button" class="btn btn-primary mb-2 d-none btnChinhSuaTinTuc"><i class="fas fa-edit"></i> Chỉnh sửa</button>
+                <button type="button" class="btn btn-danger mb-2 d-none btnXoaTinTuc"><i class="fas fa-trash-alt"></i> Xóa</button>
+            </div>
+        </div>
+    </div>
+    <!-- Danh sách tin tức -->
+    <!-- Khong them bat cu gi vao the nay -->
+    <div id="danhsachTinTuc"></div>
+</div>
+<!-- Them Moi Tin Tuc -->
+<div class="modal" id="modalThemMoiTinTuc">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title" id="lblTMTT_Title">Thêm Mới Tin Tức</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <!-- End Modal Header -->
+
+        <!-- Modal body -->
+        <div class="modal-body">  
+            <div class="form-group">
+                <label for="txtTMTT_Ten" >Tên tin tức:</label>
+                <input type="text" class="form-control" id="txtTMTT_Ten">
+            </div>
+            <div class="form-group">
+                <label for="txtTMTT_MoTaNganGon" >Mô tả ngắn gọn:</label>
+                <textarea class="form-control" rows="3" id="txtTMTT_MoTaNganGon"></textarea>
+            </div>
+            <div>
+                <label for="txtTMTT_HinhAnh" >Hình ảnh:</label>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="txtTMTT_HinhAnh" accept="image/jpg, image/gif, image/png, image/jpeg">
+                    <label class="custom-file-label" for="txtTMTT_HinhAnh">Choose file</label>
+                </div>
+            </div>
+            <!-- <div>
+                <label for="" >Mô tả chi tiết:</label>
+            </div> -->
+            <div style="display: flex;justify-content: center;">
+                <button type="button" id = "btnTMTT_Them"class="btn btn-warning d-none" style="width: 200px"><i class="fas fa-check-circle"></i> Thêm</button>
+                <button type="button" id = "btnTMTT_CapNhat"class="btn btn-warning d-none" style="width: 200px"><i class="fas fa-check-circle"></i> Cập nhật</button>
+            </div>
+        </div> 
+        <!-- End Modal body -->       
+      </div>
+    </div>
+  </div>
+<!-- End Them Moi Tin Tuc -->
+
+
+
+
+
+
+
+<script src="/assets/js/tinTuc.js"></script>

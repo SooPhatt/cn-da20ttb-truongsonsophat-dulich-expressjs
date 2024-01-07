@@ -1,0 +1,69 @@
+<div class="container" style="padding-top: 5px;">
+    <!-- Button -->
+    <div>
+        <button type="button" id="btnUserThemMoi" class="btn btn-primary mb-2" data-toggle="modal" data-target="#modalDangKy"><i class="fas fa-plus-circle"></i> Thêm mới</button>
+    </div>
+    <!-- Mẫu row -->
+    <div class="d-none">
+        <button type="button" class="btn btn-danger mb-2 btnUserXoa"><i class="fas fa-trash-alt"></i></button>
+        <button type="button" class="btn btn-primary mb-2 btnUserChinhSua" data-toggle="modal" data-target="#modalDangKy"><i class="fas fa-edit"></i>
+    </div>
+    
+    <!-- Table -->
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">STT</th>
+            <th scope="col">User</th>
+            <th scope="col">Họ và tên</th>
+            <th scope="col">Xóa</th>
+            <th scope="col">Chỉnh sửa</th>
+          </tr>
+        </thead>
+        <tbody id="tbodyListUser">
+        </tbody>
+    </table>
+</div>
+
+<!-- The Modal Dang Ky -->
+<div class="modal" id="modalDangKy">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">...</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <!-- End Modal Header -->
+
+        <!-- Modal body -->
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="hoTen" >Tên đăng nhập:</label>
+                <input type="text" class="form-control" id="txtTenNguoiDung">
+            </div>
+            <div class="form-group">
+                <label for="hoTen" >Họ và tên:</label>
+                <input type="text" class="form-control" id="txtHoTen">
+            </div>
+            <div class="form-group">
+                <label for="matKhau">Mật khẩu:</label>
+                <input type="password" class="form-control" id="txtMatKhau">
+            </div>
+            <div class="form-group d-none">
+                <label for="nlmatKhau">Nhập lại mật khẩu:</label>
+                <input type="password" class="form-control" id="txtNhapLaiMatKhau">
+            </div>
+            <div style="display: flex;justify-content: center;">
+                <button type="button" id = "btnThemMoiUser_Them"class="btn btn-warning mx-auto" style="width: 200px"><i class="fas fa-check-circle"></i> Thêm</button>
+                <button type="button" id = "btnThemMoiUser_Sua"class="btn btn-warning mx-auto" style="width: 200px"><i class="fas fa-check-circle"></i> Cập nhật</button>
+            </div>
+        </div> 
+        <!-- End Modal body -->       
+      </div>
+    </div>
+  </div>
+<!-- End The Modal Dang Ky -->
+
+<script src="/assets/js/qlUser.js"></script>

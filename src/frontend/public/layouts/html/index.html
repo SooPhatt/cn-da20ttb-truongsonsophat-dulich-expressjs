@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
+        <title>DU LỊCH CỒN CHIM</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"></head>
@@ -13,61 +13,217 @@
         <!-- Bootstrap -->
         <link rel="stylesheet" href="/assets/libs/bootstrap/bootstrap.min.css">
         <script src="/assets/libs/bootstrap/bootstrap.min.js"></script>
+        <!-- Bootbox -->
+        <script src="/assets/libs/bootbox/bootbox.all.min.js"></script>
+        <!-- MD5 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/core.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
+        <!-- Moment -->
+        <script src="/assets/libs/moment/moment.min.js"></script>
         <!-- JS -->
+        <script src="/assets/js/enum.js" defer></script>
+        <script src="/assets/js/globalVariable.js" defer></script>
         <script src="/assets/js/common.js" defer></script>
         <script src="/assets/js/index.js" defer></script>
+        <script src="/assets/js/dangNhap.js" defer></script>
+        <!--Css-->
+        <link rel="stylesheet" href="/layouts/css/index.css">
+        <link rel="stylesheet" href="/layouts/css/tinTuc.css">
+        <link rel="stylesheet" href="/layouts/css/hinhAnh.css">
+        <link rel="stylesheet" href="/layouts/css/videos.css">
         <style>
         </style>
     </head>
     <body>
         <!-- Header -->
         <header>
-            <div class="container">
-                <!-- Gioi thieu -->
-                <br>
-                <h2>DU LỊCH CỒN CHIM</h2>
-                <p></p>
-                <!-- End Gioi thieu -->
-
-                <!-- Menu -->
-                <ul class="nav nav-tabs" id="tabIndex">
-                    <!-- Tab Trang chu -->
-                    <li class="nav-item" data-page="trangChu">
-                        <a class="nav-link active" href="#">TRANG CHỦ</a>
-                    </li>
-                    <!-- Tab Gioi thieu -->
-                    <li class="nav-item" data-page="gioiThieu">
-                        <a class="nav-link" href="#">GIỚI THIỆU</a>
-                    </li>
-                    <!-- Tab Album -->
-                    <li class="nav-item" data-page="album">
-                        <a class="nav-link" href="#">ALBUM</a>
-                    </li>
-                    <!-- Tab Tin tuc -->
-                    <li class="nav-item" data-page="tinTuc">
-                        <a class="nav-link" href="#">TIN TỨC</a>
-                    </li>
-                    <!-- Tab Dich vu -->
-                    <li class="nav-item" data-page="dichVu">
-                        <a class="nav-link" href="#">DỊCH VỤ</a>
-                    </li>
-                    <!-- Tab Lien he -->
-                    <li class="nav-item" data-page="lienHe">
-                        <a class="nav-link" href="#">LIÊN HỆ</a>
-                    </li>
-
-                </ul>
-                <!-- End Menu -->
+            <div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-8">
+                        <h2 style="padding: 20px;">DU LỊCH CỒN CHIM</h2>
+                        <!-- Menu -->
+                        <ul class="nav nav-tabs" role="tablist" id="tabIndex" style="border-bottom: 1px solid #ffffff;">
+                            <!-- Tab Trang chu -->
+                            <li class="nav-item" data-page="trangChu">
+                                <a class="nav-link active" data-toggle="tab" href="#"><b>TRANG CHỦ</b></a>
+                            </li>
+                            <!-- Tab Gioi thieu -->
+                            <li class="nav-item" data-page="gioiThieu">
+                                <a class="nav-link" data-toggle="tab" href="#"><b>GIỚI THIỆU</b></a>
+                            </li>
+                            <!-- Tab Album -->
+                            <!-- <li class="nav-item" data-page="album">
+                                <a class="nav-link" data-toggle="tab" href="#"><b>ALBUM</b></a>
+                            </li> -->
+                            <!-- Tab Hinh Anh -->
+                            <li class="nav-item" data-page="hinhAnh">
+                                <a class="nav-link" data-toggle="tab" href="#"><b>HÌNH ẢNH</b></a>
+                            </li>
+                            <!-- Tab Videos -->
+                            <li class="nav-item" data-page="videos">
+                                <a class="nav-link" data-toggle="tab" href="#"><b>VIDEOS</b></a>
+                            </li>
+                            <!-- Tab Tin tuc -->
+                            <li class="nav-item" data-page="tinTuc">
+                                <a class="nav-link" data-toggle="tab" href="#"><b>TIN TỨC</b></a>
+                            </li>
+                            <!-- Tab Dich vu -->
+                            <!-- <li class="nav-item" data-page="dichVu">
+                                <a class="nav-link" data-toggle="tab" href="#"><b>DỊCH VỤ</b></a>
+                            </li> -->
+                            <!-- Tab Lien he -->
+                            <li class="nav-item" data-page="lienHe">
+                                <a class="nav-link" data-toggle="tab" href="#"><b>LIÊN HỆ</b></a>
+                            </li>
+                            <!-- Tab Quản lý User -->
+                            <li class="nav-item d-none" data-page="qlUser">
+                                <a class="nav-link" data-toggle="tab" href="#"><b>QUẢN LÝ USER</b></a>
+                            </li>
+                        </ul>
+                        <!-- End Menu -->
+                    </div>
+                    <div class="col-3">
+                        <!-- Button dang nhap -->
+                        <div id="pannelDangNhap" class="" style="display: flex; flex-direction: row; justify-content: flex-end; height: 100%;">
+                            <div style="display: flex;flex-direction: row;align-items: flex-end; padding-bottom: 5px;">
+                                <button type="button" id="btnDangNhap" class="btn btn-primary btn-warning " data-toggle="modal" data-target="#modalDangNhap">
+                                    <i class="fas fa-sign-in-alt"></i> Đăng Nhập</button>
+                                <!-- <button type="button" id="btnDangKy" class="btn btn-primary btn-warning ml-2 mr-2" data-toggle="modal" data-target="#modalDangKy" style="width: 120px;">Đăng Ký</button> -->
+                            </div>
+                        </div>
+                        <!-- Thong tin nguoi dung -->
+                        <div id="pannelThongTinUser" class="d-none">
+                            <label style="align-items: end;">Xin chào: &nbsp;<span id="lbHoten">...</span>!</label>
+                            <div style="display: flex;flex-direction: row;">
+                                <button type="button" id="btnChinhSuaUser" class="btn btn-primary btn-warning" data-toggle="modal" data-target="#modalDoiMatKhau"><i class="fas fa-edit"></i></button>
+                                <button type="button" id="btnDangXuat" class="btn btn-primary btn-warning ml-1">Đăng xuất</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </header>
         <!-- End Header -->
         <!-- Page -->
-        <div class="page">
+        <div class="page tab-content">
+            <div id="nav-trangChu" data-page="trangChu" class="container tab-pane active"></div>
+            <div id="nav-gioiThieu" data-page="gioiThieu" class="container tab-pane"></div>
+            <!-- <div id="nav-album" data-page="album" class="container tab-pane"></div> -->
+            <div id="nav-hinhAnh" data-page="hinhAnh" class="container tab-pane"></div> 
+            <div id="nav-videos" data-page="videos" class="container tab-pane"></div> 
+            <div id="nav-tinTuc" data-page="tinTuc" class="container tab-pane"></div>
+            <div id="nav-dichVu" data-page="dichVu" class="container tab-pane"></div>
+            <div id="nav-lienHe" data-page="lienHe" class="container tab-pane"></div>
+            <div id="nav-qlUser" data-page="qlUser" class="container tab-pane"></div>
         </div>
 
         <!-- End Page -->
-        kkkkkkkkkkkkkkkkkkkkkk
+        
         <!-- Footer -->
-        <!-- End Page -->
+        <div class="footer">
+            <table style="width: 40%">
+                <div>
+                   <tr>
+                       <th>ĐỊA CHỈ KHU DU LỊCH</th>
+                       <td>Xã Hòa Minh, huyện Châu Thành, tỉnh Trà Vinh</td>
+                       
+                   </tr>
+                   
+               </div> <br>
+               <div>
+                   <tr > 
+                       <th>SỐ ĐIỆN THOẠI</th>
+                       <td> 0979958702</td>
+                       
+                   </tr>
+                   <tr>
+                       <th>EMAIL</th>
+                       <td>Truongsonsophat1102@gmail.com</td>
+                   </tr>
+               </div>
+           </table>
+           
+       </div>
+        <!-- End Footer -->
+
+        <!-- The Modal Dang Nhap -->
+        <div class="modal" id="modalDangNhap">
+            <div class="modal-dialog modal-md">
+            <div class="modal-content">
+            
+                <!-- Modal Header -->
+                <div class="modal-header">
+                <h4 class="modal-title">Đăng Nhập</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- End Modal Header -->
+                
+                <!-- Modal body -->
+                <div class="modal-body">        
+                    <div class="form-group">
+                        <label for="usr">Tên đăng nhập:</label>
+                        <input type="text" id="txtDNTenDangNhap" class="form-control ">
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Mật khẩu:</label>
+                        <input type="password" id="txtDNMatKhau" class="form-control">
+                    </div>
+                    <!-- FormCheck-->
+                    <div class="form-check">
+                        <label class="form-check-label" for="chkDNLuuMatKhau">
+                            <input type="checkbox" id="chkDNLuuMatKhau" class="form-check-input" name="option1" value="something">Ghi nhớ mật khẩu
+                        </label>
+                    </div>
+                    <!-- End FormCheck-->   
+                    <!-- Button Dang Nhap-Dang Ky-->
+                    <div style="display: flex;justify-content: center;margin-top: 20px;">
+                        <!-- <button type="button" id="btnDNDangKy" class="btn btn-warning" data-toggle="modal" data-target="#modalDangKy"><i class="fas fa-plus"></i> Đăng ký</button>  -->
+                        <button type="button" id="btnDNDangNhap" class="btn btn-warning ml-2"><i class="fas fa-check-circle"></i> Đăng nhập</button> 
+                    </div>
+                    <!-- Button Dang Nhap-Dang Ky--> 
+                </div>  
+                <!-- End Modal body -->      
+            </div>
+            </div>
+        </div>
+        <!-- End The Modal Dang Nhap -->
+
+        <!-- Doi Mat Khau -->
+        <div class="modal" id="modalDoiMatKhau">
+            <div class="modal-dialog modal-md">
+            <div class="modal-content">
+            
+                <!-- Modal Header -->
+                <div class="modal-header">
+                <h4 class="modal-title">Đổi Mật Khẩu</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- End Modal Header -->
+                
+                <!-- Modal body -->
+                <div class="modal-body">        
+                    <div class="form-group">
+                        <label for="pwd">Mật khẩu hiện tại:</label>
+                        <input type="password" id="modalDoiMatKhau_txtMatKhauHienTai" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Mật khẩu mới:</label>
+                        <input type="password" id="modalDoiMatKhau_txtMatKhau" class="form-control">
+                    </div>
+                    <div class="form-group d-none">
+                        <label for="pwd">Nhập lại mật khẩu mới:</label>
+                        <input type="password" id="modalDoiMatKhau_txtNhapLaiMatKhau" class="form-control">
+                    </div>
+                    <div style="display: flex;justify-content: center;margin-top: 20px;">
+                        <button type="button" id="btnCapNhatMatKhau" class="btn btn-warning ml-2"><i class="fas fa-check-circle"></i> Cập nhật</button> 
+                    </div>
+                </div>  
+                <!-- End Modal body -->      
+            </div>
+            </div>
+        </div>
+        <!-- End Doi Mat Khau -->
+
     </body>
 </html>

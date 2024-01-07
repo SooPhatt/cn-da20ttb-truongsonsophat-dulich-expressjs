@@ -1,0 +1,36 @@
+#maudiv{
+    border-radius: 20px;
+    padding: 10px;
+    background-color: rgb(206, 231, 91);
+    margin: 45px;
+    display: grid;  
+}
+#hinh{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.underline-text {
+    text-decoration: underline;
+    font-size: 30px;
+    text-align: center;
+    bottom: 0;
+    border-bottom: 4px;
+    color: #379237;
+    font-weight: bold;   
+}
+.noidung {
+    font-size: 13pt;
+    border-radius: 20px;
+    padding: 10px;
+    display: grid; 
+    border-style: outset;
+}
+hr.customm-hr {
+    width: 250px; /* Chiều dài ngắn hơn */
+    height: 6px; /* Độ dày */
+    background-color: #379237; /* Màu sắc */
+    border: none; /* Loại bỏ đường viền */
+    margin: auto; /* Khoảng cách từ trên xuống và từ dưới lên */
+}

@@ -1,0 +1,129 @@
+<div class="container" style="padding-top: 5px;">
+    <div class="row">
+        <div class="col-3">
+            <!-- Thư viện ảnh -->
+            <h5 style="color: #379237;" > <b>THƯ VIỆN HÌNH </b></h5>
+            <div class="list-group" id="lstThuVienHinh">
+                <a href="#" class="list-group-item list-group-item-action"></a>
+            </div>
+        </div>
+        <div class="col-9">
+            <!-- Album ảnh -->
+            <div id="pannelAlbumAnh">
+                <h5 style="color: #379237;" ><b>ALBUM HÌNH MỚI</b></h5>
+                <!-- Button -->
+                <div>
+                    <button type="button" id="btnAlbumAnhThemMoi" class="btn btn-primary mb-2 d-none" data-toggle="modal" data-target="#modalThemMoiAlbum"><i class="fas fa-plus-circle"></i> Thêm mới</button>
+                </div>
+                <!-- Mẫu -->
+                <div id="mauAlbumAnh" class="col-4 mt-1 d-none">
+                    <div style="display: flex;align-content: center;flex-direction: column;align-items: center;">
+                        <img class="img-fluid imgAlbumAnh" alt="" width="300" height="200"  src=""> 
+                        <a class="lblAlbumAnhTen" sty href="#">Tên Album</a>
+                        <div>
+                            <button type="button" class="btn btn-primary mb-2 d-none btnChinhSuaAlbum"><i class="fas fa-edit"></i> Chỉnh sửa</button>
+                            <button type="button" class="btn btn-danger mb-2 d-none btnXoaAlbum"><i class="fas fa-trash-alt"></i> Xóa</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Danh sách album -->
+                <!-- Khong them bat cu gi vao the nay -->
+                <div id="danhSachAlbum" class="row"></div>
+            </div>
+            <!-- Hình ảnh -->
+            <div id="pannelHinhAnh">
+                <!-- Button -->
+                <div>
+                    <button type="button" id="btnHinhAnhThemMoi" class="btn btn-primary mb-2 d-none" data-toggle="modal" data-target="#modalThemMoiHinhAnh"><i class="fas fa-plus-circle"></i> Thêm mới</button>
+                </div>
+                <!-- Mẫu -->
+                <div id="mauHinhAnh" class="col-4 mt-1 d-none">
+                    <div style="display: flex;align-content: center;flex-direction: column;align-items: center;">
+                        <img class="img-fluid imgHinhAnh" alt="" width="300" height="200"  src=""> 
+                        <a class="lblHinhAnhTen" sty href="#">Tên Hình Ảnh</a>
+                        <div>
+                            <!-- <button type="button" class="btn btn-primary mb-2 d-none btnChinhSuaAlbum"><i class="fas fa-edit"></i> Chỉnh sửa</button> -->
+                            <button type="button" class="btn btn-danger mb-2 d-none btnXoaHinhAnh"><i class="fas fa-trash-alt"></i> Xóa</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Danh sách album -->
+                <!-- Khong them bat cu gi vao the nay -->
+                <div id="danhSachHinhAnh" class="row"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Them Moi Album -->
+<div class="modal" id="modalThemMoiAlbum">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title" id="txtTMAlbum_Title">Thêm Mới Album</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <!-- End Modal Header -->
+
+        <!-- Modal body -->
+        <div class="modal-body">  
+            <div class="form-group">
+                <label for="txtTMAlbum_Ten" >Tên Album:</label>
+                <input type="text" class="form-control" id="txtTMAlbum_Ten">
+            </div>
+            <div>
+                <label for="txtTMAlbum_HinhAnh" >Hình ảnh:</label>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="txtTMAlbum_HinhAnh" accept="image/jpg, image/gif, image/png, image/jpeg">
+                    <label class="custom-file-label" for="txtTMAlbum_HinhAnh">Choose file</label>
+                </div>
+            </div>
+            <div style="display: flex;justify-content: center;">
+                <button type="button" id = "btnTMAlbum_Them"class="btn btn-warning d-none" style="width: 200px"><i class="fas fa-check-circle"></i> Thêm</button>
+                <button type="button" id = "btnTMAlbum_CapNhat"class="btn btn-warning d-none" style="width: 200px"><i class="fas fa-check-circle"></i> Cập nhật</button>
+            </div>
+        </div> 
+        <!-- End Modal body -->       
+      </div>
+    </div>
+  </div>
+<!-- End Them Moi Album -->
+
+
+<!-- Them Moi Hinh Anh -->
+<div class="modal" id="modalThemMoiHinhAnh">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title" id="txtTMHA_Title">Thêm Mới Hình Ảnh</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <!-- End Modal Header -->
+
+        <!-- Modal body -->
+        <div class="modal-body">  
+            <div class="form-group">
+                <label for="txtTMHA_Ten" >Tên hình ảnh:</label>
+                <input type="text" class="form-control" id="txtTMHA_Ten">
+            </div>
+            <div>
+                <label for="txtTMHA_HinhAnh" >Hình ảnh:</label>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="txtTMHA_HinhAnh" accept="image/jpg, image/gif, image/png, image/jpeg">
+                    <label class="custom-file-label" for="txtTMHA_HinhAnh">Choose file</label>
+                </div>
+            </div>
+            <div style="display: flex;justify-content: center;">
+                <button type="button" id = "btnTMHA_Them"class="btn btn-warning" style="width: 200px"><i class="fas fa-check-circle"></i> Thêm</button>
+                <!-- <button type="button" id = "btnTMHA_CapNhat"class="btn btn-warning d-none" style="width: 200px"><i class="fas fa-check-circle"></i> Cập nhật</button> -->
+            </div>
+        </div> 
+        <!-- End Modal body -->       
+      </div>
+    </div>
+  </div>
+<!-- End Them Moi Hinh Anh -->
+
+
+<script src="/assets/js/hinhAnh.js"></script>

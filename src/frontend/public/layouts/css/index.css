@@ -1,0 +1,56 @@
+.footer {
+   /* position: fixed; */
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #54B435;
+   color: white;
+   text-align: left;
+   height: 130px;
+}
+
+table {
+   margin: auto;
+}
+
+header{
+   background-color: #54B435;
+   color: white;    
+}
+
+#tabIndex a:not(.active) {
+   color: white;
+}
+
+/* Bỏ margin bottom */
+.nav-tabs .nav-item {
+   margin-bottom: 0px !important;
+}
+
+#pannelThongTinUser {
+   display: flex;
+   flex-direction: column;
+   margin-right: 10px;
+   align-items: flex-end;
+   justify-content: center;
+   height: 100%;
+}
+
+#btnDangXuat {
+   width: 120px;
+}
+#btnChinhSuaUser {
+   width: 50px;
+}
+#btnDangNhap {
+   width: 150px;
+   margin-right: 10px;
+}
+#btnDNDangNhap,
+#btnDNDangKy {
+   width: 150px;
+}
+
+.container.tab-pane {
+   min-height: 600px;
+}

@@ -1,0 +1,75 @@
+<div class="container" style="padding-top: 5px;">
+    <!-- Button -->
+    <div>
+        <button type="button" id="btnVideoThemMoi" class="btn btn-primary mb-2 d-none" data-toggle="modal" data-target="#modalThemMoiVideo"><i class="fas fa-plus-circle"></i> Thêm mới</button>
+    </div>
+    <!-- Mẫu tin tức -->
+    <div id="mauVideo" class="col-4 mt-1 d-none">
+        <div style="display: flex;align-content: center;flex-direction: column;align-items: center;">
+            <img class="img-fluid imgVideoHinhAnh" alt="" width="300" height="200"  src=""> 
+            <a class="lblTenVideo" sty href="#">Tên Hình Ảnh</a>
+            <div>
+                <button type="button" class="btn btn-danger mb-2 d-none btnXoaVideo"><i class="fas fa-trash-alt"></i> Xóa</button>
+            </div>
+        </div>
+    </div>
+    <!-- Danh sách tin tức -->
+    <!-- Khong them bat cu gi vao the nay -->
+    <div id="danhSachVideo" class="row"></div>
+</div>
+
+<!-- Them Moi Hinh Anh -->
+<div class="modal" id="modalThemMoiVideo">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title" id="txtTMHA_Title">Thêm Mới Video</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <!-- End Modal Header -->
+
+        <!-- Modal body -->
+        <div class="modal-body">  
+            <div class="form-group">
+                <label for="txtTMVideo_Ten" >Tên video:</label>
+                <input type="text" class="form-control" id="txtTMVideo_Ten">
+            </div>
+            <div class="form-group">
+                <label for="txtTMVideo_Url" >URL Youtube video:</label>
+                <input type="text" class="form-control" id="txtTMVideo_Url">
+            </div>
+            <div style="display: flex;justify-content: center;">
+                <button type="button" id="btnTMVideo_Them"class="btn btn-warning" style="width: 200px"><i class="fas fa-check-circle"></i> Thêm</button>
+            </div>
+        </div> 
+        <!-- End Modal body -->       
+      </div>
+    </div>
+  </div>
+<!-- End Them Moi Hinh Anh -->
+
+<!-- Xem Video -->
+<div class="modal" id="modalXemVideo">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Videos</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <!-- End Modal Header -->
+
+        <!-- Modal body -->
+        <div class="modal-body" style="display: flex;justify-content: center;">
+            <iframe id="iframeVideo" width="720" height="480" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen> </iframe>
+        </div> 
+        <!-- End Modal body -->       
+      </div>
+    </div>
+  </div>
+<!-- End Xem Video -->
+
+
+
+<script src="/assets/js/videos.js"></script>

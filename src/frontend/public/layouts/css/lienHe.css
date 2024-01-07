@@ -1,0 +1,12 @@
+#nav-lienHe h4{
+    color: #379237;
+    font-weight: bold;
+}
+hr.custom{
+    width: 530px; /* Chiều dài ngắn hơn */
+    height: 2px; /* Độ dày */
+    background-color: #379237; /* Màu sắc */
+    border: none; /* Loại bỏ đường viền */
+    margin: auto; /* Khoảng cách từ trên xuống và từ dưới lên */
+}
+
